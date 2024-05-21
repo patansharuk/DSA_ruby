@@ -1,0 +1,15 @@
+Array is a collection of items with same data type.
+That are stored at contiguous memory locations.
+Each item in an array is indexed starting with 0.
+
+
+Implementing data structures like stacks and queues.
+Represent data in tables and matrices.
+
+One-Dimentional-Arrays
+Multi-Dimentional-Arrays
+
+Traversal
+Insertion
+Deletion
+Searching
