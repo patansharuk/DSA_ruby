@@ -4,8 +4,12 @@ class Algorithms
     end
 
     def linear_search
+        """
+            search for target element in linear fashion.
+            suitable for small datasets.
+        """
         for each in @array
-            n = 10
+            n = 4
             if each == n
                 p "found the value #{n} by linear search."
                 return
@@ -13,12 +17,67 @@ class Algorithms
         end
         p 'value not found!'
     end
+
+    def sentinel_linear_search
+        target = 3
+        last = @array[-1]
+        @array[-1] = target
+        i = 0
+
+        while @array[i] != target
+            i += 1
+        end
+
+        @array[-1] = last
+        if (i < @array.length - 1) or (@array[@array.length - 1] == target)
+            p "key present at index #{i}"
+        else
+            p 'Element not found!'
+        end
+    end
+
+    def binary_search
+        low, high, target = 0, @array.length - 1 , 4
+        while low <= high do
+            mid = low + (high - low) / 2
+
+            if @array[mid] == target
+                p "Element found at index - #{mid}"
+                return
+            elsif @array[mid] < target
+                low = mid + 1
+            else
+                high = mid - 1
+            end
+        end
+        p 'Element not found!'
+    end
+
+    def jump_search
+        step_value = 4
+        jump_index = step_value
+        target = 1
+        while(jump_index <= @array.length)
+            if @array[jump_index] < target
+                jump_index += step_value
+            else
+                jump_index -= step_value
+                for each in (jump_index..(jump_index+step_value))
+                    if @array[each] == target
+                        p "element found at index - #{each}"
+                        return
+                    end
+                end
+                p 'element not found!'
+                return
+            end
+        end
+        p 'element not found!'
+    end
 end
 
-arr = [1,2,3,4,5]
-Algorithms.new(arr).linear_search
-
-
+arr = [1,2,3,4,5,6,7,8,9]
+Algorithms.new(arr).jump_search
 
 
 
