@@ -1,3 +1,39 @@
+class Algorithms
+    def initialize(array)
+        @array = array
+    end
+
+    def linear_search
+        for each in @array
+            n = 10
+            if each == n
+                p "found the value #{n} by linear search."
+                return
+            end
+        end
+        p 'value not found!'
+    end
+end
+
+arr = [1,2,3,4,5]
+Algorithms.new(arr).linear_search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Find the largest three distinct elements in an array
 # o/p - 6, 5, 4
 # O(n) time complexity
@@ -85,7 +121,7 @@ def sumCloseToZero(arr)
 end
 
 
-def main
+def problems
     puts 'The 3 largest numbers are:'
     print3largest([1, 2, 4, -1])
 
@@ -99,4 +135,4 @@ def main
     sumCloseToZero([-8, -66, -60])
 end
 
-main()
+# problems
